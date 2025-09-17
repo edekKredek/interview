@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { signInUrl, signUpConfirmUrl } from '../test-data/url';
+import { signUpConfirmUrl } from '../test-data/url';
 
 export class SignInPage {
   private page: Page;
@@ -35,7 +35,7 @@ export class SignInPage {
   //Assertions
 
   async assertTestLoginHeaderIsVisible() {
-    await expect (
+    await expect(
       this.page.getByRole('heading', { name: 'Test login' })
     ).toBeVisible();
   }
@@ -44,12 +44,6 @@ export class SignInPage {
     await expect(
       this.page.getByRole('link', { name: 'Log out' }),
     ).toBeInViewport();
-  }
-
-  async assertUserButtonNotInViewport(userName: string) {
-    await expect(
-      this.page.getByRole('link', { name: 'Log out' }),
-    ).toBeDisabled();
   }
 
   async assertSignUpConfirmUrl() {
@@ -70,5 +64,11 @@ export class SignInPage {
     const errorDiv = this.page.locator('div#error.show');
     await expect(errorDiv).toBeVisible();
     await expect(errorDiv).toHaveText('Your password is invalid!');
+  }
+
+  async assertLoggedInSuccessfullyHeaderVisible() {
+    const header = this.page.locator('h1.post-title');
+    await expect(header).toBeVisible();
+    await expect(header).toHaveText('Logged In Successfully');
   }
 }

@@ -28,6 +28,8 @@ test.describe('Login Page Tests', () => {
     );
 
     //Then
+    // Assert that the logged in successfully header is visible
+    await signInPage.assertLoggedInSuccessfullyHeaderVisible();
     // Assert that Log Out button is visible on the site after login
     await signInPage.assertLogOutButton();
     // Assert that the URL is the sign up confirmation page
@@ -193,7 +195,7 @@ test.describe('Login Page Tests', () => {
     await signInPage.assertInvalidUsernameErrorVisible();
   });
 
-    test('TC11 Log Out', async ({ page }) => {
+  test('TC11 Log Out', async ({ page }) => {
 
     const signInPage = new SignInPage(page);
 
@@ -204,20 +206,13 @@ test.describe('Login Page Tests', () => {
       signInUsers.valid.password,
     );
 
-    //Then
-    // Assert that Log Out button is visible on the site after login
-    await signInPage.assertLogOutButton();
-    // Assert that the URL is the sign up confirmation page
-    await signInPage.assertSignUpConfirmUrl();
-
-    //When
     //Click Log Out button
     await page.getByRole('link', { name: 'Log out' }).click();
 
     //Then
     // Assert that the URL is the sign in page
     await expect(page).toHaveURL(signInUrl);
-    // Assert that the Log Out button is no longer visible
+    // Assert that Test Login header is visible again
     await signInPage.assertTestLoginHeaderIsVisible();
   });
 });

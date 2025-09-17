@@ -1,0 +1,23 @@
+{
+  "name": "vibewise.ai",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000V\u0000i\u0000b\u0000e\u0000W\u0000i\u0000s\u0000e\u0000.\u0000a\u0000i\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edekKredek/VibeWise.ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edekKredek/VibeWise.ai/issues"
+  },
+  "homepage": "https://github.com/edekKredek/VibeWise.ai#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
+    "prettier": "3.6.2"
+  }
+}

@@ -1,42 +1,38 @@
 export const signInUsers = {
   valid: {
-    email: 'John.doe@example.com',
-    password: 'Password1!',
-  },
-  valid2: {
-    email: 'Jane.doe@example.com',
-    password: 'PassToWorldd2!',
+    username: 'student',
+    password: 'Password123',
   },
   noPassword: {
-    email: 'John.doe@example.com',
+    username: 'student',
     password: '',
   },
   noEmail: {
-    email: '',
-    password: 'Password1!',
+    username: '',
+    password: 'Password123',
   },
   blank: {
-    email: '   ',
+    username: '   ',
     password: '   ',
   },
-  invalidEmail: {
-    email: 'John.doe@com',
-    password: 'Password1!',
+  invalidUsername: {
+    username: '!@#$%^&*()_+',
+    password: 'Password123',
   },
-  emailWithSpaces: {
-    email: ' John.doe@example.com ',
-    password: 'Password1!',
+  userWithSpaces: {
+    username: ' student ',
+    password: 'Password123',
   },
-  emailLowercase: {
-    email: 'john.doe@example.com',
-    password: 'Password1!',
+  userUppercase: {
+    username: 'STUDENT',
+    password: 'Password123',
   },
   sqlInjection: {
-    email: "' OR '1'='1",
-    password: 'Password1!',
+    username: "' OR '1'='1",
+    password: 'Password123Password123',
   },
   sqlInjectionWithAt: {
-    email: "test@example.com' OR '1'='1",
+    username: "student' OR '1'='1",
     password: 'Password1!',
   },
 };

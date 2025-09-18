@@ -51,7 +51,7 @@ test.describe('Login Page Tests', () => {
     // Assert that the URL is not the sign up confirmation page
     await signInPage.assertNotSignUpConfirmUrl();
     // Assert that the error message 'Your password is invalid!' is visible
-    await signInPage.assertInvalidPasswordErrorVisible
+    await signInPage.assertInvalidPasswordErrorVisible();
   });
 
   test('TC03 Login with no username', async ({ page }) => {

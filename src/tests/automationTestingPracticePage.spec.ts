@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { AutomationTestingPracticePage } from '../pageObjectModels/automationTestingPracticePage';
 
-test.only('Color', async ({ page }) => {
+test('Color', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 

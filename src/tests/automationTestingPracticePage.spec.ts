@@ -1,11 +1,11 @@
 import { test } from '@playwright/test';
-import { AutomationTestingPracticePagePlaywright } from '../pageObjectModels/automationTestingPracticePagePlaywright';
+import { AutomationTestingPracticePage } from '../pageObjectModels/automationTestingPracticePage';
 
 test.only('Color', async ({ page }) => {
 
     await page.goto('https://testautomationpractice.blogspot.com/');
 
-    const automationTestingPracticePagePlaywright = new AutomationTestingPracticePagePlaywright(page);
+    const automationTestingPracticePagePlaywright = new AutomationTestingPracticePage(page);
 
     const myColor = automationTestingPracticePagePlaywright.selectRandomColorFromDropdown();
 
